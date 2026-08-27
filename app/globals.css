@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a0a0a;
+  --color-line: #e5e5e5;
+  --font-sans: var(--font-mattone), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light only;
+}
+
+html,
+body {
+  background-color: #ffffff;
+  color: #0a0a0a;
+}
+
+/* Hide the scrollbar but keep scrolling fully functional */
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+}
