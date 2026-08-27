@@ -19,8 +19,9 @@ export function Hero() {
         transition={{ duration: 0.6 }}
         className="relative text-sm tracking-[0.25em] uppercase text-ink/50 mb-8"
       >
-        Software Engineer  <span className="relative -top-[3px] mx-2 text-[0.7em]">·</span>
-  University of New Brunswick
+        Software Engineer{" "}
+        <span className="relative -top-[3px] mx-2 text-[0.7em]">·</span>
+        University of New Brunswick
       </motion.p>
 
       <motion.h1
@@ -29,7 +30,9 @@ export function Hero() {
         transition={{ duration: 0.8, delay: 0.1 }}
         className="relative font-black uppercase leading-[0.82] tracking-tight text-[clamp(3.5rem,15vw,12rem)]"
       >
-        ANIEKAN<br />EKARIKA
+        ANIEKAN
+        <br />
+        EKARIKA
       </motion.h1>
 
       <motion.p
@@ -38,7 +41,8 @@ export function Hero() {
         transition={{ duration: 0.6, delay: 0.4 }}
         className="relative mt-10 max-w-xl text-xl md:text-lg text-ink/70"
       >
-        Software engineering student building full stack and devops systems that solve real problems.
+        Software engineering student building full stack and devops systems that
+        solve real problems.
       </motion.p>
 
       <motion.div
@@ -57,7 +61,7 @@ export function Hero() {
         </Magnetic>
         <Magnetic>
           <Link
-            href="put link to resume"
+            href="https://drive.google.com/file/d/1GWrNGHQU3OO-e7l9K2vHUlIHCtVICSy_/view?usp=sharing"
             target="_blank"
             className="inline-block px-9 py-4 border border-ink font-bold uppercase tracking-wide text-sm transition-colors duration-200 hover:bg-ink hover:text-white active:scale-95"
           >
@@ -72,9 +76,26 @@ export function Hero() {
         transition={{ duration: 0.6, delay: 0.8 }}
         className="relative mt-10 flex justify-center gap-8 text-ink/50"
       >
-        <AnimatedLink href="https://github.com/Aniekan210" target="_blank" className="hover:text-ink">GitHub</AnimatedLink>
-        <AnimatedLink href="https://linkedin.com/in/aniekanabasiekarika" target="_blank" className="hover:text-ink">LinkedIn</AnimatedLink>
-        <AnimatedLink href="mailto:ani8dar@gmail.com" className="hover:text-ink">Email</AnimatedLink>
+        <AnimatedLink
+          href="https://github.com/Aniekan210"
+          target="_blank"
+          className="hover:text-ink"
+        >
+          GitHub
+        </AnimatedLink>
+        <AnimatedLink
+          href="https://linkedin.com/in/aniekanabasiekarika"
+          target="_blank"
+          className="hover:text-ink"
+        >
+          LinkedIn
+        </AnimatedLink>
+        <AnimatedLink
+          href="mailto:ani8dar@gmail.com"
+          className="hover:text-ink"
+        >
+          Email
+        </AnimatedLink>
       </motion.div>
 
       <motion.div
