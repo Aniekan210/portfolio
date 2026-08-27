@@ -3,6 +3,7 @@ import { RichText } from "@/components/RichText";
 import { Footer } from "@/components/Footer";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { LiveLinkButton } from "@/components/LiveLinkButton";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -80,17 +81,8 @@ export default async function CaseStudyPage({
 
             <div className="flex flex-col gap-3 pt-2 border-t border-ink/10">
               {project.liveLink && (
-                <Link
-                  href={project.liveLink}
-                  target="_blank"
-                  className="group flex items-center justify-between text-sm font-bold uppercase transition-colors duration-200 hover:text-ink/60"
-                >
-                  Live site
-                  <ArrowUpRight
-                    size={16}
-                    className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                  />
-                </Link>
+                /* <LiveLinkButton liveLink={"http://localhost:3000/"} /> */
+                <LiveLinkButton liveLink={project.liveLink} />
               )}
 
               {project.githubLink && (
