@@ -48,6 +48,7 @@ export default async function CaseStudyPage({
             <h1 className="font-black text-2xl md:text-3xl leading-tight tracking-tight">
               {project.title}
             </h1>
+
             <p className="text-sm text-ink/70">{project.shortDescription}</p>
 
             {project.roleDescription && (
@@ -66,6 +67,17 @@ export default async function CaseStudyPage({
               <p className="text-sm">{project.techStack}</p>
             </div>
 
+            {project.ongoing && (
+              <div>
+                <p className="text-xs uppercase tracking-wide text-ink/40 mb-1">
+                  Status
+                </p>
+                <p className="text-sm">
+                  {project.ongoing ? "Ongoing" : "Completed"}
+                </p>
+              </div>
+            )}
+
             <div className="flex flex-col gap-3 pt-2 border-t border-ink/10">
               {project.liveLink && (
                 <Link
@@ -80,6 +92,7 @@ export default async function CaseStudyPage({
                   />
                 </Link>
               )}
+
               {project.githubLink && (
                 <Link
                   href={project.githubLink}
@@ -102,15 +115,18 @@ export default async function CaseStudyPage({
                 <span className="text-xs font-bold tracking-[0.25em] text-ink/30 block mb-3">
                   {String(i + 1).padStart(2, "0")}
                 </span>
+
                 <h2 className="font-black text-2xl md:text-3xl tracking-tight mb-5">
                   {s.title}
                 </h2>
+
                 <RichText content={s.content!} />
               </div>
             ))}
           </div>
         </div>
       </main>
+
       <Footer />
     </div>
   );
