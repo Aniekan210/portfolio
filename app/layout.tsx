@@ -3,8 +3,8 @@ import { mattone } from "./fonts";
 import { ScrollProgress } from "@/components/ScrollProgress";
 
 export const metadata = {
-  title: "Your Name | Software Engineer",
-  description: "Portfolio of Your Name — software engineer.",
+  title: "Aniekan Ekarika | Software Engineer",
+  description: "Portfolio of Aniekan Ekarika.",
 };
 
 export default function RootLayout({
