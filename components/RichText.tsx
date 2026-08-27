@@ -9,6 +9,16 @@ export function RichText({ content }: { content: Document }) {
     <div className="prose prose-neutral max-w-none prose-headings:font-black prose-a:underline">
       {documentToReactComponents(content, {
         renderNode: {
+          [BLOCKS.UL_LIST]: (_, children) => (
+            <ul className="list-disc pl-6">{children}</ul>
+          ),
+
+          [BLOCKS.OL_LIST]: (_, children) => (
+            <ol className="list-decimal pl-6">{children}</ol>
+          ),
+
+          [BLOCKS.LIST_ITEM]: (_, children) => <li>{children}</li>,
+
           [BLOCKS.EMBEDDED_ASSET]: (node) => {
             const { url, title, width, height } = node.data.target.fields.file
               ? {
@@ -20,7 +30,9 @@ export function RichText({ content }: { content: Document }) {
                     node.data.target.fields.file.details.image?.height || 800,
                 }
               : { url: "", title: "", width: 1200, height: 800 };
+
             if (!url) return null;
+
             return (
               <Image
                 src={url}
@@ -31,6 +43,7 @@ export function RichText({ content }: { content: Document }) {
               />
             );
           },
+
           [INLINES.HYPERLINK]: (node, children) => (
             <Link
               href={node.data.uri}
