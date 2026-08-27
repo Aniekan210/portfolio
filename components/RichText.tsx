@@ -9,6 +9,10 @@ export function RichText({ content }: { content: Document }) {
     <div className="prose prose-neutral max-w-none prose-headings:font-black prose-a:underline">
       {documentToReactComponents(content, {
         renderNode: {
+          [BLOCKS.PARAGRAPH]: (_, children) => (
+            <p className="mb-6 last:mb-0">{children}</p>
+          ),
+
           [BLOCKS.UL_LIST]: (_, children) => (
             <ul className="list-disc pl-6">{children}</ul>
           ),

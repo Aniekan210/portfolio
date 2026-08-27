@@ -32,7 +32,9 @@ export async function getFeaturedProjects(): Promise<Project[]> {
     "fields.featured": true,
     include: 2,
     limit: 3,
+    order: ["fields.id"],
   });
+
   return res.items.map(mapEntry);
 }
 
@@ -40,8 +42,9 @@ export async function getAllProjects(): Promise<Project[]> {
   const res = await contentfulClient.getEntries({
     content_type: "project",
     include: 2,
-    order: ["-sys.createdAt"],
+    order: ["fields.id"],
   });
+
   return res.items.map(mapEntry);
 }
 
