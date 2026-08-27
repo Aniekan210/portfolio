@@ -46,7 +46,7 @@ export default async function CaseStudyPage({
 
         <div className="grid md:grid-cols-[280px_1fr] gap-20">
           <aside className="md:sticky md:top-28 h-fit space-y-8 border border-ink/15 p-7">
-            <h1 className="font-black text-2xl md:text-3xl leading-tight tracking-tight">
+            <h1 className="font-black text-2xl md:text-3xl leading-tight tracking-tight [overflow-wrap:anywhere]">
               {project.title}
             </h1>
 
