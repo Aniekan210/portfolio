@@ -113,9 +113,7 @@ export default function PrivacyPolicyPage() {
             </h2>
             <p className="text-sm md:text-base text-ink/70 leading-relaxed">
               We share data only with the infrastructure providers necessary to
-              operate the Applications, such as our hosting provider ([e.g.,
-              Vercel]) and authentication or database provider ([e.g., Supabase
-              / Firebase / your provider]). These providers process data on our
+              operate the Applications, such as our hosting provider and authentication or database provider. These providers process data on our
               behalf and are contractually restricted from using it for any
               other purpose. We do not otherwise sell, rent, or trade your
               information.
