@@ -1,6 +1,7 @@
 import "./globals.css";
 import { mattone } from "./fonts";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "Aniekan Ekarika | Software Engineer",
@@ -18,6 +19,7 @@ export default function RootLayout({
         <ScrollProgress />
         {children}
       </body>
+      <Analytics />
     </html>
   );
 }
