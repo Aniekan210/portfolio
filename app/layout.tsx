@@ -8,7 +8,7 @@ export const metadata = {
   title: "Aniekan Ekarika | Software Engineer",
   description: "Portfolio of Aniekan Ekarika.",
 };
-
+// added a new entry
 export default function RootLayout({
   children,
 }: {
