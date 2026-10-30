@@ -61,7 +61,7 @@ export function Hero() {
         </Magnetic>
         <Magnetic>
           <Link
-            href="https://drive.google.com/file/d/1GWrNGHQU3OO-e7l9K2vHUlIHCtVICSy_/view?usp=sharing"
+            href="https://drive.google.com/file/d/1elB_c1c4Mc3k9g2eEYpe2fEratH8seTX/view?usp=sharing"
             target="_blank"
             className="inline-block px-9 py-4 border border-ink font-bold uppercase tracking-wide text-sm transition-colors duration-200 hover:bg-ink hover:text-white active:scale-95"
           >
