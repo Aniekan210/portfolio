@@ -36,10 +36,10 @@ export default function PrivacyPolicyPage() {
             </h2>
             <p className="text-sm md:text-base text-ink/70 leading-relaxed">
               This Privacy Policy applies to the web applications and side
-              projects built and maintained by [Aniekan Ekarika] ("we," "us,"
-              "our") that offer Google Sign-In as an authentication method (each
-              an "Application," collectively the "Applications"), including
-              those linked from{" "}
+              projects built and maintained by [Aniekanabasi Ekarika] ("we,"
+              "us," "our") that offer Google Sign-In as an authentication method
+              (each an "Application," collectively the "Applications"),
+              including those linked from{" "}
               <a
                 href="https://aniekan.dev/projects"
                 className="underline underline-offset-4"
@@ -113,9 +113,10 @@ export default function PrivacyPolicyPage() {
             </h2>
             <p className="text-sm md:text-base text-ink/70 leading-relaxed">
               We share data only with the infrastructure providers necessary to
-              operate the Applications, such as our hosting provider and authentication or database provider. These providers process data on our
-              behalf and are contractually restricted from using it for any
-              other purpose. We do not otherwise sell, rent, or trade your
+              operate the Applications, such as our hosting provider and
+              authentication or database provider. These providers process data
+              on our behalf and are contractually restricted from using it for
+              any other purpose. We do not otherwise sell, rent, or trade your
               information.
             </p>
           </section>

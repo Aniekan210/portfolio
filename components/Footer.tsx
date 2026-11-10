@@ -21,7 +21,7 @@ export function Footer() {
         ))}
       </div>
       <div className="flex flex-col gap-1 text-xs uppercase tracking-wide text-ink/40">
-        <p>© {new Date().getFullYear()} Aniekan Ekarika</p>
+        <p>© {new Date().getFullYear()} Aniekanabasi Ekarika</p>
         <p>Fredericton, Canada</p>
       </div>
     </footer>

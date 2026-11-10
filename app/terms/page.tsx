@@ -37,7 +37,7 @@ export default function TermsOfServicePage() {
             <p className="text-sm md:text-base text-ink/70 leading-relaxed">
               These Terms of Service ("Terms") govern your access to and use of
               the web applications and side projects built and maintained by
-              Aniekan Ekarika, including those linked from{" "}
+              Aniekanabasi Ekarika, including those linked from{" "}
               <a
                 href="https://aniekan.dev/projects"
                 className="underline underline-offset-4"
@@ -110,7 +110,7 @@ export default function TermsOfServicePage() {
             </h2>
             <p className="text-sm md:text-base text-ink/70 leading-relaxed">
               All code, design, and content of the Applications, excluding
-              content you provide yourself, remain the property of Aniekan
+              content you provide yourself, remain the property of Aniekanabasi
               Ekarika unless otherwise stated.
             </p>
           </section>
@@ -144,9 +144,10 @@ export default function TermsOfServicePage() {
               9. Limitation of Liability
             </h2>
             <p className="text-sm md:text-base text-ink/70 leading-relaxed">
-              To the fullest extent permitted by law, Aniekan Ekarika shall not
-              be liable for any indirect, incidental, or consequential damages
-              arising from your use of, or inability to use, any Application.
+              To the fullest extent permitted by law, Aniekanabasi Ekarika shall
+              not be liable for any indirect, incidental, or consequential
+              damages arising from your use of, or inability to use, any
+              Application.
             </p>
           </section>
 

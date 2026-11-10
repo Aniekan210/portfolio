@@ -33,7 +33,7 @@ export function About() {
             [ 01 — ABOUT ]
           </span>
           <p className="font-black text-2xl md:text-4xl leading-tight tracking-tight mb-6">
-            Hi, I'm Aniekan.
+            Hi, I'm Aniekanabasi.
           </p>
           <p className="text-base md:text-lg text-ink/70 mb-8 max-w-lg mx-auto md:mx-0">
             A software engineering student who likes understanding how things
