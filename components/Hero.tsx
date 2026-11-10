@@ -91,10 +91,11 @@ export function Hero() {
           LinkedIn
         </AnimatedLink>
         <AnimatedLink
-          href="mailto:ani8dar@gmail.com"
+          href="https://dev.to/aniekan210"
+          target="_blank"
           className="hover:text-ink"
         >
-          Email
+          Dev.to
         </AnimatedLink>
       </motion.div>
 

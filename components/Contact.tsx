@@ -41,6 +41,13 @@ export function Contact() {
           >
             LinkedIn
           </AnimatedLink>
+          <AnimatedLink
+            href="https://dev.to/aniekan210"
+            target="_blank"
+            className="text-ink/50 hover:text-ink"
+          >
+            Dev.to
+          </AnimatedLink>
         </div>
       </div>
     </section>

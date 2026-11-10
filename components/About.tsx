@@ -51,6 +51,9 @@ export function About() {
             <AnimatedLink href="https://github.com/Aniekan210" target="_blank">
               GitHub
             </AnimatedLink>
+            <AnimatedLink href="https://dev.to/aniekan210" target="_blank">
+              Dev.to
+            </AnimatedLink>
           </div>
         </motion.div>
       </div>
