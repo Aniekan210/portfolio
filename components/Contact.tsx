@@ -46,7 +46,7 @@ export function Contact() {
             target="_blank"
             className="text-ink/50 hover:text-ink"
           >
-            Dev.to
+            Blog
           </AnimatedLink>
         </div>
       </div>

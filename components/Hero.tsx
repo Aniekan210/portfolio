@@ -95,7 +95,7 @@ export function Hero() {
           target="_blank"
           className="hover:text-ink"
         >
-          Dev.to
+          Blog
         </AnimatedLink>
       </motion.div>
 

@@ -52,7 +52,7 @@ export function About() {
               GitHub
             </AnimatedLink>
             <AnimatedLink href="https://dev.to/aniekan210" target="_blank">
-              Dev.to
+              Blog
             </AnimatedLink>
           </div>
         </motion.div>
