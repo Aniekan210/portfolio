@@ -5,19 +5,59 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { LiveLinkButton } from "@/components/LiveLinkButton";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import { SITE_URL, PERSON_ID, WEBSITE_ID, serializeJsonLd } from "@/lib/seo";
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
 
 export async function generateStaticParams() {
   const projects = await getAllProjects();
-  return projects.map((p) => ({ slug: p.slug }));
+
+  return projects.map((p) => ({
+    slug: p.slug,
+  }));
 }
 
-export default async function CaseStudyPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = await getProjectBySlug(slug);
+
+  if (!project) notFound();
+
+  const title = `${project.title} Case Study`;
+  const description =
+    project.shortDescription ||
+    `Explore ${project.title}, a software engineering project by Aniekanabasi Ekarika.`;
+
+  const pageUrl = `${SITE_URL}/projects/${encodeURIComponent(slug)}`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: pageUrl,
+    },
+    openGraph: {
+      title: `${title} | Aniekanabasi Ekarika`,
+      description,
+      url: pageUrl,
+      siteName: "Aniekanabasi Ekarika",
+      type: "article",
+    },
+    twitter: {
+      card: "summary",
+      title: `${title} | Aniekanabasi Ekarika`,
+      description,
+    },
+  };
+}
+
+export default async function CaseStudyPage({ params }: Props) {
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
+
   if (!project) notFound();
 
   const sections = [
@@ -30,8 +70,62 @@ export default async function CaseStudyPage({
     { title: "What's Next", content: project.whatsNext },
   ].filter((s) => s.content);
 
+  const pageUrl = `${SITE_URL}/projects/${encodeURIComponent(slug)}`;
+
+  const description =
+    project.shortDescription ||
+    `A software engineering project by Aniekanabasi Ekarika.`;
+
+  const projectEntityId = `${pageUrl}#project`;
+  const webpageId = `${pageUrl}#webpage`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": webpageId,
+        name: `${project.title} | Case Study`,
+        description,
+        url: pageUrl,
+        isPartOf: {
+          "@id": WEBSITE_ID,
+        },
+        author: {
+          "@id": PERSON_ID,
+        },
+        mainEntity: {
+          "@id": projectEntityId,
+        },
+      },
+      {
+        "@type": project.liveLink ? "SoftwareApplication" : "CreativeWork",
+        "@id": projectEntityId,
+        name: project.title,
+        description,
+        url: project.liveLink || pageUrl,
+        creator: {
+          "@type": "Person",
+          "@id": PERSON_ID,
+          name: "Aniekanabasi Ekarika",
+          url: `${SITE_URL}/`,
+        },
+        mainEntityOfPage: {
+          "@id": webpageId,
+        },
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(jsonLd),
+        }}
+      />
+
       <main className="flex-1 px-6 pt-28 pb-28 max-w-6xl mx-auto w-full">
         <Link
           href="/projects"
@@ -79,7 +173,6 @@ export default async function CaseStudyPage({
 
             <div className="flex flex-col gap-3 pt-2 border-t border-ink/10">
               {project.liveLink && (
-                /* <LiveLinkButton liveLink={"http://localhost:3000/"} /> */
                 <LiveLinkButton liveLink={project.liveLink} />
               )}
 
@@ -87,6 +180,7 @@ export default async function CaseStudyPage({
                 <Link
                   href={project.githubLink}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="group flex items-center justify-between text-sm font-bold uppercase transition-colors duration-200 hover:text-ink/60"
                 >
                   GitHub
