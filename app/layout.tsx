@@ -35,6 +35,7 @@ export default function RootLayout({
     sameAs: [
       "https://github.com/Aniekan210",
       "https://linkedin.com/in/aniekanabasiekarika",
+      "https://dev.to/aniekan210",
     ],
     publishingPrinciples: [
       {
