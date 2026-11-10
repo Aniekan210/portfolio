@@ -4,6 +4,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
+import { image } from "framer-motion/client";
 
 export const metadata = {
   title: "Aniekanabasi Ekarika | Software Engineer",
@@ -17,46 +18,126 @@ export default function RootLayout({
 }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Aniekanabasi Ekarika",
-    additionalName: "Aniekan",
-    familyName: "Ekarika",
-    givenName: "Aniekanabasi",
-    jobTitle: "Software Engineer",
-    url: "https://www.aniekan.dev",
-    image:
-      "https://media.licdn.com/dms/image/v2/D5603AQFG-T9AAis0EA/profile-displayphoto-scale_400_400/B56Z7UQtzpHUAg-/0/1781677614298?e=1795651200&v=beta&t=jKq-GZr0OUcqgpnQv43oYt-bLUGw6xlwIbja9yOkFKM",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Fredericton",
-      addressRegion: "NB",
-      addressCountry: "Canada",
-    },
-    sameAs: [
-      "https://github.com/Aniekan210",
-      "https://linkedin.com/in/aniekanabasiekarika",
-      "https://dev.to/aniekan210",
-    ],
-    publishingPrinciples: [
+    "@graph": [
       {
-        "@type": "DigitalDocument",
-        name: "Portfolio Website",
-        url: "https://www.aniekan.dev/projects/my-portfolio-site",
+        "@type": "Person",
+        "@id": "https://www.aniekan.dev/#person",
+        name: "Aniekanabasi Ekarika",
+        givenName: "Aniekanabasi",
+        familyName: "Ekarika",
+        alternateName: ["Aniekan Ekarika", "Aniekan"],
+        jobTitle: "Software Engineer",
+        url: "https://www.aniekan.dev/",
+        image: "https://www.aniekan.dev/images/mypic.jpeg",
+        sameAs: [
+          "https://github.com/Aniekan210",
+          "https://linkedin.com/in/aniekanabasiekarika",
+          "https://dev.to/aniekan210",
+        ],
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Fredericton",
+          addressRegion: "NB",
+          addressCountry: "CA",
+        },
+        knowsAbout: [
+          "Software Engineering",
+          "Full-Stack Development",
+          "Web Development",
+          "TypeScript",
+          "React",
+          "Next.js",
+          "Go",
+          "Database Systems",
+        ],
+        mainEntityOfPage: {
+          "@id": "https://www.aniekan.dev/#profile",
+        },
       },
       {
-        "@type": "DigitalDocument",
-        name: "Schedulee.app",
-        url: "https://www.aniekan.dev/projects/schedulee",
+        "@type": "WebSite",
+        "@id": "https://www.aniekan.dev/#website",
+        name: "Aniekanabasi Ekarika",
+        alternateName: "Aniekan Ekarika",
+        url: "https://www.aniekan.dev/",
+        creator: {
+          "@id": "https://www.aniekan.dev/#person",
+        },
       },
       {
-        "@type": "DigitalDocument",
-        name: "Windows Remote Control AI",
-        url: "https://www.aniekan.dev/projects/remote-control",
+        "@type": "ProfilePage",
+        "@id": "https://www.aniekan.dev/#profile",
+        name: "Aniekanabasi Ekarika | Software Engineer",
+        url: "https://www.aniekan.dev/",
+        isPartOf: {
+          "@id": "https://www.aniekan.dev/#website",
+        },
+        mainEntity: {
+          "@id": "https://www.aniekan.dev/#person",
+        },
       },
       {
-        "@type": "DigitalDocument",
+        "@type": "SoftwareApplication",
+        "@id": "https://schedulee.aniekan.dev/#app",
+        name: "Schedulee",
+        url: "https://schedulee.aniekan.dev/",
+        description:
+          "An appointment booking platform that helps businesses manage availability, accept bookings, and prevent scheduling conflicts.",
+        applicationCategory: "BusinessApplication",
+        creator: {
+          "@id": "https://www.aniekan.dev/#person",
+        },
+        subjectOf: {
+          "@type": "WebPage",
+          url: "https://www.aniekan.dev/projects/schedulee",
+        },
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://control.aniekan.dev/#app",
+        name: "Remote Control",
+        url: "https://control.aniekan.dev/",
+        description:
+          "An AI-powered system that lets users control their Windows computers remotely through natural language.",
+        applicationCategory: "UtilitiesApplication",
+        creator: {
+          "@id": "https://www.aniekan.dev/#person",
+        },
+        subjectOf: {
+          "@type": "WebPage",
+          url: "https://www.aniekan.dev/projects/remote-control",
+        },
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://productivity.aniekan.dev/#app",
         name: "3/6/9 Productivity Tracker",
-        url: "https://www.aniekan.dev/projects/productivity-app",
+        url: "https://productivity.aniekan.dev/",
+        description:
+          "A productivity application for setting quarterly goals, planning daily activities, and tracking progress over 90 days.",
+        applicationCategory: "ProductivityApplication",
+        creator: {
+          "@id": "https://www.aniekan.dev/#person",
+        },
+        subjectOf: {
+          "@type": "WebPage",
+          url: "https://www.aniekan.dev/projects/productivity-app",
+        },
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://www.aniekan.dev/#portfolio-project",
+        name: "Personal Portfolio Website",
+        url: "https://www.aniekan.dev/",
+        description:
+          "A personal portfolio showcasing software engineering projects, technical case studies, and live applications.",
+        creator: {
+          "@id": "https://www.aniekan.dev/#person",
+        },
+        subjectOf: {
+          "@type": "WebPage",
+          url: "https://www.aniekan.dev/projects/my-portfolio-site",
+        },
       },
     ],
   };
