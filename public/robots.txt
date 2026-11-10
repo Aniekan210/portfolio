@@ -1,29 +1,35 @@
 # ----------------------------------------------------
-# PUBLIC SEARCH ENGINES - FULL MAXIMUM ACCESS
-# Allows discovery, indexing, and search engine ranking
+# GOOGLEBOT - EXPLICIT MAXIMUM ACCESS
 # ----------------------------------------------------
 User-agent: Googlebot
 Allow: /
+Allow: /projects/
+Allow: /images/
+Disallow: /_next/
+Disallow: /api/
 
 User-agent: Googlebot-Image
 Allow: /
+Allow: /images/
 
+# ----------------------------------------------------
+# BING & OTHER MAJOR SEARCH ENGINES
+# ----------------------------------------------------
 User-agent: Bingbot
 Allow: /
+Allow: /projects/
+Disallow: /_next/
+Disallow: /api/
 
 User-agent: DuckDuckBot
 Allow: /
+Allow: /projects/
 
 User-agent: Applebot
 Allow: /
+Allow: /projects/
 
-User-agent: Slurp
-Allow: /
-
-User-agent: Qwantify
-Allow: /
-
-# Generic catch-all for any other legitimate web search engines
+# Generic catch-all fallback for any other legitimate search crawlers
 User-agent: *
 Allow: /
 Allow: /projects/
@@ -31,8 +37,7 @@ Disallow: /_next/
 Disallow: /api/
 
 # ----------------------------------------------------
-# AI TRAINING & SCRAPING BOTS - STRICTLY BLOCKED
-# These bots steal data for LLMs and do NOT drive traffic
+# AI TRAINING BOTS - STRICTLY BLOCKED
 # ----------------------------------------------------
 User-agent: GPTBot
 Disallow: /
@@ -60,6 +65,3 @@ Disallow: /
 
 User-agent: CohereBot
 Disallow: /
-
-# Host identity declaration
-Host: https://aniekan.dev
